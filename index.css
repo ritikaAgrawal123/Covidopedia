@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+}
+.main-header{
+    height: 450px;
+    width: 100%;
+}
+.rotate-corona img{
+    animation: corona 3s linear infinite;
+}
+@keyframes corona{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
