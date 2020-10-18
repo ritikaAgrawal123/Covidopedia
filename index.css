@@ -5,6 +5,9 @@
     height: 450px;
     width: 100%;
 }
+.right-side h1{
+    font-size: 3rem;
+}
 .rotate-corona img{
     animation: corona 3s linear infinite;
 }
@@ -15,4 +18,8 @@
     100%{
         transform: rotate(360deg);
     }
+}
+.nav-style ul li a{
+    size: 100px;
+    color: black;
 }
