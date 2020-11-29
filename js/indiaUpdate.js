@@ -1,7 +1,6 @@
 $(document).ready(function(){
     var url="https://api.covid19india.org/data.json";
     $.getJSON(url,function(data){
-        console.log(data)
         var active=data.statewise[0].active
         var confirmed=data.statewise[0].confirmed
         var recovered=data.statewise[0].recovered
@@ -10,13 +9,41 @@ $(document).ready(function(){
         var total_confirmed=[]
         var total_recovered=[]
         var total_deaths=[]
-
-        $.each(data.statewise,function(id,obj){
+        var itable=document.getElementById("itable");
+        
+        for(var i=1;i<data.statewise.length;i++){
+            var obj=data['statewise'][i]
             states.push(obj.state)
             total_confirmed.push(obj.confirmed)
             total_recovered.push(obj.recovered)
             total_deaths.push(obj.deaths)
-        })
+            var x=itable.insertRow();
+            x.insertCell(0);
+
+            itable.rows[i].cells[0].innerHTML=obj.lastupdatedtime;
+
+            x.insertCell(1);
+
+            itable.rows[i].cells[1].innerHTML=obj.state
+
+            x.insertCell(2);
+
+            itable.rows[i].cells[2].innerHTML=obj.confirmed
+
+            x.insertCell(3);
+
+            itable.rows[i].cells[3].innerHTML=obj.active;
+
+            x.insertCell(4);
+
+            itable.rows[i].cells[4].innerHTML=obj.recovered;
+
+            x.insertCell(5);
+
+            itable.rows[i].cells[5].innerHTML=obj.deaths;
+
+    
+        }
         states.shift()
         total_deaths.shift()
         total_recovered.shift()
@@ -53,5 +80,14 @@ $(document).ready(function(){
             ]
             }
         })
+        
+
+        
+    })   
+    $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#itable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      }); 
     })
-})
