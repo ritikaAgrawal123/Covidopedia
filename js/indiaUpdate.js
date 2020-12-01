@@ -20,28 +20,28 @@ $(document).ready(function(){
             var x=itable.insertRow();
             x.insertCell(0);
 
-            itable.rows[i].cells[0].innerHTML=obj.lastupdatedtime;
+            
 
             x.insertCell(1);
 
-            itable.rows[i].cells[1].innerHTML=obj.state
+            itable.rows[i].cells[0].innerHTML=obj.state
 
             x.insertCell(2);
 
-            itable.rows[i].cells[2].innerHTML=obj.confirmed
+            itable.rows[i].cells[1].innerHTML=obj.confirmed
 
             x.insertCell(3);
 
-            itable.rows[i].cells[3].innerHTML=obj.active;
+            itable.rows[i].cells[2].innerHTML=obj.active;
 
             x.insertCell(4);
 
-            itable.rows[i].cells[4].innerHTML=obj.recovered;
+            itable.rows[i].cells[3].innerHTML=obj.recovered;
 
             x.insertCell(5);
 
-            itable.rows[i].cells[5].innerHTML=obj.deaths;
-
+            itable.rows[i].cells[4].innerHTML=obj.deaths;
+            itable.rows[i].cells[5].innerHTML=obj.lastupdatedtime;
     
         }
         states.shift()
@@ -78,6 +78,10 @@ $(document).ready(function(){
                     minBarLength:100
                 },
             ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
             }
         })
         

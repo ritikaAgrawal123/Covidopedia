@@ -5,31 +5,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta-- Bootstrap CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Fredericka+the+Great&family=Monoton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <title>Covidopedia</title>
+    <style>
+        #mychart{
+            height: 80vh;
+        }
+    </style>
   </head>
   <body>
-        <nav class="navbar">
-            <input type="checkbox" id="check" />
-      <label for="check" class="show-btn">
-        <i class="fa fa-bars"></i>
-      </label>
-      <p id="brand">COVIDOPEDIA</p>
-            <ul class="text-right">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">IndialCovidLive</a></li>
-                <li><a href="worldUpdate.html">WorldCovidLive</a></li>
-                <li><a href="about.html">About</a></li>
-                <label for="check" class="hide-btn">
-                    <i class="fa fa-times"></i>
-                  </label>
-            </ul>
-        </nav>
-    <div class="container-fluid my-3 p-5 bg-light text-center">
+    <nav class="navbar">
+        <input type="checkbox" id="check" />
+  <label for="check" class="show-btn">
+    <i class="fa fa-bars"></i>
+  </label>
+  <p id="brand">COVIDOPEDIA</p>
+        <ul>
+            <li></i><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+            <li><a href="indiaUpdate.html"><i class="fa fa-flag" aria-hidden="true"></i>IndiaCovidLive</a></li>
+            <li><a href="worldUpdate.html"><i class="fa fa-globe" aria-hidden="true"></i>WorldCovidLive</a></li>
+            <li><a href="about.html"><i class="fa fa-question-circle" aria-hidden="true"></i>About</a></li>
+            <label for="check" class="hide-btn">
+                <i class="fa fa-times"></i>
+              </label>
+        </ul>
+    </nav>
+    <div class="container-fluid my-5 p-5 bg-light text-center">
         <h1>Covid India Tracker</h1>
         <h5 class="text-muted">
             Open Source Project for Tracking COVID-19 Cases in India
@@ -37,35 +41,38 @@
     </div>
     <div class="container mb-5">
         <div class="row text-center my-5">
-            <div class="col-3 text-warning border-bottom border-warning bg-light py-5">
+            <div class=" col-6 col-lg-3 text-warning border-bottom border-warning bg-light py-5">
                 <h5>Confirmed</h5>
                 <p id="confirmed"></p>
             </div>
-            <div class="col-3 text-info border-bottom border-info bg-light py-5">
+            <div class="col-6 col-lg-3 text-info border-bottom border-info bg-light py-5">
                 <h5>Active</h5>
                 <p id="active"></p>
             </div>
-            <div class="col-3 text-success border-bottom border-success bg-light py-5">
+            <div class="col-6 col-lg-3 text-success border-bottom border-success bg-light py-5">
                 <h5>Recovered</h5>
                 <p id="recovered"></p>
             </div>
-            <div class="col-3 text-danger border-bottom border-danger bg-light py-5">
+            <div class="col-6 col-lg-3 text-danger border-bottom border-danger bg-light py-5">
                 <h5>Deaths</h5>
                 <p id="deaths"></p>
             </div>
         </div>
+    </div>
+    <div class="m-5">
         <canvas id="mychart"></canvas>
-    
-    <input class="form-control" id="myInput" type="text" placeholder="Search..">
-    <div class="table-responsive">
+    </div>
+    <div class="container">
+    <input class="form-control mb-5" id="myInput" type="text" placeholder="Search..">
+    <div class="table-responsive bg-light">
         <table id="itable" class="table table-bordered table-striped text-center">
-            <tr>
-                <th>LastTimeUpdated</th>
+            <tr class="thead-dark">
                 <th>State</th>
                 <th>Confirmed</th>
                 <th>Active</th>
                 <th>Recovered</th>
                 <th>Deaths</th>
+                <th>LastTimeUpdated</th>
             </tr>
         </table>
     </div>

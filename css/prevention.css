@@ -1,0 +1,43 @@
+h1{
+    font-size: 65px;
+    color:mediumblue;
+    text-align: center;
+    margin-top: 35px;
+}
+.top{
+    font-family: cursive;
+    font-size: 25px;
+    margin: 50px 30px;
+}
+.right, .left{
+    background-color:grey;
+    margin: 40px 30px;
+    height: 230px;
+    padding: 20px;
+    border-radius: 5px 60px;
+    color: white;
+}
+.left{
+    background-color: darkturquoise;
+    color: navy;
+}
+.left img {
+    float: left;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: 12px 30px;
+}
+.right img{
+    float: right;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: 10px ;
+}
+.right h3, .left h3{
+    font-size: 40px;
+}
+.right p, .left p{
+    font-size: 20px;
+}
